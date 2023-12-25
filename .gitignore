@@ -3,10 +3,5 @@
 *.txt
 *.pem
 .idea/
-lab-5-spring-data-jpa/*
-lab-5-spring-data-jpa/
-lab3/
-320/
 .terraform/
 .terraform.lock.hcl
-stress-test-app/
