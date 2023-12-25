@@ -1,0 +1,23 @@
+version: 0.2
+
+env:
+  parameter-store:
+    SPRING_DATASOURCE_URL: /db/SPRING_DATASOURCE_URL
+    SPRING_DATASOURCE_USERNAME: /db/SPRING_DATASOURCE_USERNAME
+    SPRING_DATASOURCE_PASSWORD: /db/SPRING_DATASOURCE_PASSWORD
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  build:
+    commands:
+      - mvn clean package
+  post_build:
+    commands:
+      - echo Build completed
+artifacts:
+  files:
+    - 'appspec.yml'
+    - 'scripts/*.sh'
+    - 'target/*.jar'
+  discard-paths: yes
